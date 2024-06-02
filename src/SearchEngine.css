@@ -39,3 +39,7 @@
     width: 500px;
     height: 50px;
 }
+.SearchButton:hover {
+    background-color: #505bd2;
+    color: white;
+}
