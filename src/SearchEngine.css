@@ -14,7 +14,7 @@
 .SearchBarTag {
     position: relative;
     top: 7px;
-    left: -190px;
+    left: 0px;
     font-weight: 500;
 }
 
@@ -42,10 +42,4 @@
 .SearchButton:hover {
     background-color: #505bd2;
     color: white;
-}
-
-.Keyword {
-    color: #505bd2;
-    font-size: 35px;
-    font-weight: 700;
 }
