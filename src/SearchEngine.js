@@ -1,23 +1,24 @@
 import React, { useState } from 'react';
 import './SearchEngine.css';
 import axios from 'axios';
+import Results from './Results';
 
 export default function SearchEngine() {
-    const [keyword, setKeyword] = useState('');
-    // const [wordMeaning, setWordMeaning] = useState('');
+    let [keyword, setKeyword] = useState('');
+    const [results, setResults] = useState(null);
 
     function displayDictionary(response) {
-        // setWordMeaning(response.data);
-        console.log(response);
+        setResults(response.data[0]);
+        console.log(response.data[0].phonetics);
+        // console.log(results.phonetics);
     }
 
     function searchKeyword(event) {
         event.preventDefault();
-        alert(`searching for ${keyword}.`);
 
-        let apiKey = 'fa90t5bf5523344e459f280fabbb9o83';
+        // let apiKey = 'fa90t5bf5523344e459f280fabbb9o83';
         let word = keyword;
-        let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${word}&key=${apiKey}`;
+        let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
         axios.get(apiUrl).then(displayDictionary);
     }
 
@@ -38,6 +39,8 @@ export default function SearchEngine() {
                 <br />
                 <button className='SearchButton btn '>Search</button>
             </form>
+            {/* <h2 className='Keyword'>{convertToUppercase()}</h2> */}
+            <Results results={results} />
         </div>
     );
 }
