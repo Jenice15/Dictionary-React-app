@@ -12,7 +12,7 @@ export default function Results(props) {
         return ` ${capitalized}`;
     }
     if (props.results) {
-        console.log(props.results.phonetics[0].text);
+        // console.log(props.results.phonetics[0].text);
         return (
             <div className='Results'>
                 <h2 className='Keyword'>{convertToUppercase()}</h2>
