@@ -17,11 +17,12 @@ export default function Results(props) {
             <div className='Results'>
                 <h2 className='Keyword'>{convertToUppercase()}</h2>
 
-                <h3>{props.results.phonetics[0].text}</h3>
+                <h3 className='Phonetics'>{props.results.phonetics[0].text}</h3>
                 <p>
                     <audio
                         controls
                         src={props.results.phonetics[0].audio}
+                        className='Audio'
                     ></audio>
                 </p>
                 <p>
